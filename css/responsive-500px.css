@@ -1,0 +1,152 @@
+@media screen and ( max-width:400px){
+    .nav-container__ul li a{
+        display: none;
+    }
+
+
+
+
+
+    .presentacion-yender{
+        padding-left: 30px;
+        padding-right: 80px;
+        background: url('/img/naruto-anime-uchiha-itachi-hd-wallpaper-preview.jpg')  cover ;
+        background-position: center;
+        background-attachment: fixed;
+
+    }
+    .presentacion-yender h1{
+        font-size: 4em;
+    }
+    .presentacion-yender h1 b{
+        font-size: 1em;
+    }
+    .presentacion-yender h1:nth-child(2){
+        font-size: 4em;
+        margin-left: 100px;
+    }
+
+
+
+    .works-container{
+        margin-top: 150px;
+    }
+    .works-container-texto h1{
+        padding-top: 0px;
+        font-size: 4em;
+    }
+
+    .works-container-img{
+        margin-left: 60px;
+    }
+
+    .img-active:active{
+        position: absolute;
+        transform: scale(1);
+        height: 244px;
+        width: 344px;
+        transform: translateY(0) translateX(0);
+        animation: desplazamiento-imgs none alternate infinite;
+        z-index: 1;
+        border: 2px solid #dd2222;
+    
+    }
+
+
+
+    .apps-container{
+        position: relative;
+        margin-left: 70px;
+        width: 100%; 
+    }
+    .apps-container-imgs{
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            height: 500px;
+            width: 100vw;
+    }
+
+
+    .apps-img{
+        position: relative;
+        top: 300px;
+        height: 110px;
+        width: 110px;
+        margin: 0px 15px;
+    }
+    
+    .apps-img h1{
+        font-size: 1em;
+        text-align: center;
+        color: #aa2222;
+    }
+    .apps-img b{
+        font-size: 1em;
+    }
+    .apps-img img{
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .apps-bar{
+        width: 110px;
+        height: 110px;
+
+    }
+    
+    
+    /*ACCION ACTIVE DE LAS CAJAS*/
+    .apps-img:hover > .apps-bar-1{
+        transform: translatey(-450px) translateX(-25px);
+        width: 400px;
+        height: 300px;
+    
+    }
+    .apps-img:hover > .apps-bar-2{
+        transform: translatey(-450px) translateX(-150px);
+        width: 400px;
+        height: 300px;
+    }
+    .apps-img:hover > .apps-bar-3{
+        transform: translatey(-450px) translateX(-275px);
+        width: 400px;
+        height: 300px;
+    }
+
+
+    .formulario-container{
+        flex-basis: 350px;
+    }
+
+    .formulario-items{
+        width: 350px;
+        margin-left: 125px;
+    }
+
+    [type="submit"]{
+        width: 150px;
+        margin-left: 125px;
+    }
+
+    .redes-sociales-container{
+        height: 300px;
+    }
+    
+    .footer{
+        top: 150px;
+        width: 490px;
+    }
+}

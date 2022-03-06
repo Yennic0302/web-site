@@ -1,0 +1,618 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    color: #eee;
+    scroll-behavior: smooth;
+    font-family: 'Be Vietnam Pro', sans-serif;
+
+}
+::selection{
+    background-color: #aa2222;
+    color: black;
+}
+body{
+    background-color: #111;
+
+}
+
+
+
+
+/* CONTENEDOR DEL NAV*/
+.header-container{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    z-index: 200;
+}
+.nav-container{
+    display: flex;
+    background-color: #222;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* CONTENEDOR DEL LOGO*/
+.nav-container-logo{
+    padding-left: 50px;
+}
+.nav-container-logo h1{
+    letter-spacing: 7px;
+}
+.nav-container-logo h1::first-letter{
+    color: #dd2222;
+}
+
+
+
+/*CONTENEDOR DE LAS OPCIONES DEL MENU*/
+.nav-container__ul{
+    display: flex;
+    margin: 0;
+    list-style: none;
+    padding-right: 50px;
+}
+.nav-container__ul li{
+    flex: 1;
+    width: 90px;
+    margin: 0px  10px;
+    text-align: center;
+}
+.nav-container__ul li a{
+    padding: 12px 25px;
+    text-decoration: none;
+}
+
+.nav-container__ul a:hover{
+    background-color: #dd2222;
+
+}
+.nav-container__ul a:active{
+    background-color: #aa2222;
+
+}
+
+
+
+
+
+/*PRESENTACION*/
+/* CONTENEDOR DE PRESENTACION*/
+.presentacion-container{
+    position: relative;
+    display: flex;
+    background-color: #111;
+    height: 600px;
+    width: 100%;
+    padding-top: 60px;
+}
+
+/* CONTENEDOR DE NOMBRE*/
+.presentacion-yender{ 
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #111;
+    justify-content: center;
+    padding-left: 100px;
+    background: url('/img/naruto-anime-uchiha-itachi-hd-wallpaper-preview.jpg') no-repeat ;
+    background-position: right;
+    background-attachment: fixed;
+    
+
+}
+
+/* PARTE PRICIPAL DEL NOMBRE*/
+.presentacion-yender h1{
+    font-size: 5em;
+    animation: color1 3s alternate infinite both;
+}
+.presentacion-yender h1 b{
+    font-size: 1em;
+}
+.presentacion-yender h1:nth-child(2){
+    font-size: 5em;
+    margin-left: 100px;
+}
+
+/*LINEA EN LA PARTE INFERIOR DEL NOMBRE*/ /* LA CLASE .linea la tiene los 2 h1 del nombre de presentacion y el titulo de work por ello la animacion es la misma*/
+.linea{
+    position: absolute;
+    height: 5px;
+    background-color: #dd2222;
+    animation: linea 10s alternate infinite;
+}
+
+/*DESCRIPCION*/
+.presentacion-yender p{
+    margin-top: 20px;
+    font-size: 1.7em;
+    animation: color2 10s alternate infinite;
+    z-index: 1;
+}
+.presentacion-yender p::first-letter{
+    color: #dd2222;
+}
+
+/* ANIMACION DE LAS LINEAS*/
+@keyframes linea{
+    0%{
+        width: 0;
+    }
+
+    100%{
+        filter: blur(3px);
+        width: 320px;
+    }
+}
+
+/* ANIMACION DEL NOMBRE*/
+@keyframes color1 {
+    0%{
+        color: #0111;
+    }
+    100%{
+        color: #dd2222;
+    }
+    
+    
+}
+/* ANIMACION DESCRIPCION*/
+@keyframes color2 {
+    0%{
+        color: #dd2222;
+    }
+    100%{
+        color: #eee;
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+/*CONTENEDOR WORKS*/
+
+.works-container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #111;
+    height: 100vh;
+    align-items: center;
+    justify-content: start;
+}
+
+/* CONTENEDOR DE TEXTO*/ /* la animacion de bajo de WORKS es la misma que la de presentacion por la clase .linea*/
+.works-container-texto{
+    height: 100%;
+    min-width: 350px;
+    flex: 1 ;
+    display: flex;
+    align-items: center;
+}
+.works-container-texto h1{
+    font-size: 5em;
+    animation: color1 3s alternate infinite both;
+    align-self: start;
+    padding-top: 100px;
+    padding-left: 50px;
+
+}
+.works-container-texto b{
+    font-size: 1em;
+}
+.works-container-texto p{
+    position: relative;
+}
+
+/*CONTENEDOR DE GALERIA DE IMAGENES*/
+.works-container-img{
+    min-width: 350px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 200px;
+    grid-gap: 5px;
+    background-color: black;
+    height: 400px;
+    overflow: auto hidden ;
+    z-index: 0;
+}
+@media screen and (max-width:720px ){
+.works-container-img{
+    position: relative;
+    top: -250px;
+    height: 300px;}
+.works-container-img{
+    height: 250px;
+
+}
+}
+.works-container-texto h1{
+    font-size: 5em;
+    animation: color1 3s alternate infinite both;
+    align-self: start;
+    padding-top: 200px;
+    padding-left: 50px;
+}
+
+/* SELECCION DE IMAGENES*/
+.works-container-img img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    animation: desplazamiento-imgs 10s alternate infinite;
+    transition: 1s;
+
+}
+
+/* ACCION ACTIVE*/
+
+.img-active:active{
+    position: absolute;
+    transform: scale(1);
+    height: 500px;
+    width: 900px;
+    transform: translateY(-100px) translateX(-500px);
+    animation: desplazamiento-imgs none alternate infinite;
+    z-index: 1;
+
+}
+/*ANIMACION DE DESPLAZAMIENTO PARA LA GALERIA*/
+@keyframes desplazamiento-imgs{
+    0%{
+        transform: translateY(0);
+    }
+
+    100%{
+        transform: translateY(-350px);
+    }
+}
+
+
+
+
+
+
+
+/*CONTENEDOR APPS-TEXTO*/
+.apps-container{
+    background-color: #111;
+    padding-top: 50px;
+}
+.apps-container-texto h1{
+    font-size: 5em;
+    padding: 40px 60px;
+    animation: color1 3s alternate infinite both;
+}
+.apps-container-texto b{
+    font-size: 1em;
+}
+.linea-apps-texto{
+    position: absolute;
+    height: 5px;
+    background-color: #dd2222;
+    animation: linea-apps-texo 10s infinite;
+}
+
+/*CONTENEDOR DE IMAGENES DE APPS*/
+.apps-container-imgs{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    height: 500px;
+    width: 100%;
+}
+.apps-img{
+    position: relative;
+    top: 50px;
+    height: 200px;
+    width: 200px;
+    margin: 0px -30px;
+    padding-top: 20px;
+    background: linear-gradient(to bottom, transparent, #046, #dd2222);
+    border-radius: 20px;
+}
+
+.apps-img h1{
+    font-size: 2em;
+    text-align: center;
+    color: #aa2222;
+}
+.apps-img b{
+    font-size: 1em;
+}
+.apps-img img{
+    object-fit: contain;
+    height: 200px;
+    width: 100%;
+
+}
+
+/*LINEAS DE ANIMACION EN DUDA DE USARLAS A VECES MENOS ES MEJOR
+.linea-apps{
+    position: relative;
+    height: 5px;
+    width: 200px;
+    background-color: #dd2222;
+    animation: linea-apps 5s alternate infinite; lineas de animacion en duda
+
+}
+.linea-apps-2{
+    position: absolute;
+    height: 200px;
+    width: 5px;
+    background-color: #dd2222;
+    transform:translatey(-200px) translateX(200px);
+    animation: linea-apps-2 5s  alternate infinite;  lineas de animacion en duda
+
+}
+*/
+/* CAJAS DE DEZPLAZAMIENTO DE CADA IMAGEN*/
+.apps-bar{
+    position: absolute;
+    transform: translatey(-200px) ;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    opacity: 0;
+    border-radius: 20px;
+    margin: 0px ;
+}
+
+
+/*ACCION ACTIVE DE LAS CAJAS*/
+.apps-img:hover > .apps-bar-1{
+    position: absolute;
+    transform: translatey(-520px) translateX(-100px);
+    background: url('/img/5809798.png') center/ cover;
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 40px;
+    transition: 0.5s;
+    z-index: 200;
+    opacity: 1 ;
+}
+.apps-img:hover > .apps-bar-2{
+    position: absolute;
+    transform: translatey(-520px) translateX(-100px);
+    background: url('/img/96821432-kreativer-html-hintergrund-codierung-programmierung-und-technologiekonzept-doppelbelichtung.webp') center/cover;
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 40px;
+    transition: .5s;
+    opacity: 1;
+    z-index: 200;
+}
+.apps-img:hover > .apps-bar-3{
+    position: absolute;
+    transform: translatey(-520px) translateX(-100px);
+    background: url('/img/CSS-Animated-Backgrounds.gif.crdownload') center/ cover;
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 40px;
+    transition: .5s;
+    opacity: 1;
+    z-index: 200;
+}
+
+.apps-bar p{
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    top: 100px;
+
+
+}
+
+
+
+
+/* ANIMACION DE LAS LINEAS*/
+@keyframes linea-apps-texo {
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 300px;
+    }
+    100%{
+        width: 0;
+    }
+}
+@keyframes linea-apps{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 200px;
+    }
+}
+
+@keyframes linea-apps-2 {
+    
+    0%{
+        height: 0;
+    }
+    100%{ 
+        height: 200px;
+    }
+}
+
+
+
+
+
+
+/*CONTENEDOR DEL FOOTER*/
+.footer-container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #111;
+    height: 500px;
+    width: 100%;
+}
+
+/*CONTENEDOR FORMULARIO*/
+.formulario-container{
+    flex: 2;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FORMULARIO INPUTS*/
+.formulario-items {
+    width: 600px;
+    height: 40px;
+    margin: 10px 0px;
+    border: none;
+    border-bottom: 2px solid #dd2222;
+    background-color: #111;
+    outline: none;
+}
+.formulario-items:hover{
+    background: linear-gradient( to bottom, transparent, #dd222266, #aa2222);
+    border-radius: 5px;
+    opacity: .5;
+    border-bottom: 4px solid #ff2222;
+}
+.formulario-items:active{
+    background: linear-gradient( to bottom, transparent, #dd222266, #aa2222);
+    border-radius: 5px;
+    opacity: 1;
+    border-bottom: 4px solid #ff2222;
+}
+.formulario-items:focus{
+    background: linear-gradient( to bottom, transparent, #dd222266, #aa2222);
+    border-radius: 5px;
+    opacity: 1;
+    border-bottom: 4px solid #ff2222;
+}
+.formulario-items::placeholder{
+    color: #eee;
+    padding: 10px;
+}
+
+/* TEXTAREA*/      /*FOCUS, HOVER Y ACTIVE SON LOS MISMOS POR LA CLASE .formulario-items*/
+.formulario-textarea{
+    height: 140px;
+    width: 600px;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 2px solid #dd2222;
+    outline: none;
+    background-color: #111;
+    resize: none;
+
+}
+
+
+/*BOTON ENVIAR*/
+[type="submit"]{
+    background-color: #dd2222;
+    color: #eee;
+    width: 300px;
+    border: none;
+    outline: none;
+    height: 35px;
+    margin: 10px;
+}
+[type="submit"]:hover{
+    background: linear-gradient(  #111, #aa2222);
+    color: white;
+    border-bottom: 4px solid #ff2222;
+}
+[type="submit"]:active{
+    background: linear-gradient( #111 , #aa2222);
+
+}
+[type="submit"]:focus{
+    background: #aa2222;
+    border-bottom: none;
+
+}
+
+
+
+
+
+.redes-sociales-container{
+
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+}
+
+.red-social-logo{
+    position: relative;
+    top:100px;
+    width: 50px;
+    background-color: #eee;
+    border-radius: 50%;
+    padding: 7px;
+    height: 50px;
+    align-self: center;
+    margin: 0px 20px;
+}
+
+.red-social-logo img{
+    width: 100%;
+    height: 100%;
+
+
+
+}
+.logo-uchiha{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    left: 200px;
+    top: 100px;
+}
+.logo-uchiha img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+
+.footer{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #222;
+    text-align: center;
+}
+
+.footer p{
+    position: relative;
+    top: 30px;
+    color: #888;
+
+}
+
